@@ -1,21 +1,37 @@
 const Hero = () => {
   return (
-    <main className="flex flex-col items-center mt-32 px-6">
-      <div className="relative w-full max-w-2xl">
-        <div className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400">
-           <span className="text-xl">🔍</span>
-        </div>
-        <input 
-          type="text" 
-          placeholder="search for skills (e.g. plumber, area 43)" 
-          className="w-full py-4 px-16 rounded-full border border-stone-300 bg-white text-stone-500 focus:outline-none focus:ring-1 focus:ring-[#b33a3a]/20 italic text-lg shadow-sm"
+    <section className="px-6 mt-4">
+      {/* 1. The Container (The "Relative" Anchor) */}
+      <div className="relative w-full h-75 md:h-100 overflow-hidden rounded-3xl">
+        
+        {/* 2. The Background Image */}
+        <img 
+          src="/tools.jpg" 
+          alt="Handyman Tools" 
+          className="w-full h-full object-cover brightness-90"
         />
-      </div>
 
-      <button className="mt-16 bg-[#b33a3a] text-white px-10 py-3 rounded-full text-[10px] font-bold uppercase tracking-[0.15em] hover:bg-red-900 transition-all shadow-md">
-        Join as a service provider
-      </button>
-    </main>
+        {/* 3. The Overlay (The "Absolute" Centerpiece) */}
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          
+          {/* The Search Bar Container */}
+          <div className="relative w-full max-w-xl group">
+            {/* Search Icon */}
+            <span className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 text-xl">
+              🔍
+            </span>
+            
+            {/* The Input Field */}
+            <input 
+              type="text" 
+              placeholder="search" 
+              className="w-full py-3 px-16 rounded-full border border-green-600 bg-white/90 backdrop-blur-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-600/20 text-center italic transition-all"
+            />
+          </div>
+          
+        </div>
+      </div>
+    </section>
   );
 };
 
