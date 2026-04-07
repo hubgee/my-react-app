@@ -1,26 +1,33 @@
 const ProviderCard = ({ image, area, trade, name, bio }) => {
   return (
-    <div className="bg-white border-2 border-[#002B5B] rounded-3xl shadow-lg p-6 flex flex-col items-center text-center max-w-70">
-      {/* 1. Provider Image */}
-      <div className="w-full h-48 rounded-3xl overflow-hidden mb-4">
-        <img src={image} alt={name} className="w-full h-full object-cover" />
+    <div className="flex flex-col border-2 border-[#002B5B] rounded-3xl w-full max-w-70">
+      {/* 1. Image Container with Yellow Background */}
+      <div className=" rounded-4xl overflow-hidden mb-4 h-64 flex items-end justify-center shadow-sm">
+        {/* We use h-[90%] to make the person "float" slightly off the bottom */}
+        <img 
+          src={image} 
+          alt={name} 
+          className="h-[90%] w-auto object-contain transition-transform hover:scale-105" 
+        />
       </div>
 
-      {/* 2. Details */}
-      <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-1">
-        {area} - {trade}
+      {/* 2. Area & Trade Label (Gold) */}
+      <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.2em] mb-1">
+        {area} — {trade}
       </p>
       
-      <h3 className="text-[#002B5B] font-extrabold text-xl mb-3">
+      {/* 3. Name (Bold Blue) */}
+      <h3 className="text-[#002B5B] font-extrabold text-xl mb-2 uppercase leading-none">
         {name}
       </h3>
       
-      <p className="text-[#002B5B] text-xs leading-relaxed mb-6 italic">
-        "{bio}"
+      {/* 4. Bio (Gray Italic) */}
+      <p className="text-gray-500 text-[11px] leading-relaxed mb-5 italic line-clamp-2">
+        {bio}
       </p>
 
-      {/* 3. Action Button */}
-      <button className="border-2 border-[#002B5B] text-[#002B5B] font-bold py-2 px-8 rounded-full text-[10px] uppercase tracking-widest hover:bg-[#002B5B] hover:text-white transition-all">
+      {/* 5. Action Button (Solid Gold Pill) */}
+      <button className="bg-[#D4AF37] text-[#002B5B] font-bold py-2 px-6 rounded-full text-[9px] uppercase tracking-widest self-start hover:bg-[#E5C158] transition-colors shadow-sm">
         Learn More
       </button>
     </div>

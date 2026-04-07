@@ -1,39 +1,75 @@
 import ProviderCard from './ProviderCard';
 
 const ProviderSection = () => {
+  // This is your data array. Make sure these images are in your 'public' folder!
+  const providers = [
+    {
+      id: 1,
+      image: '/martin.png',
+      area: 'Area 49',
+      trade: 'Trade',
+      name: 'Provider Name',
+      bio: 'Bio',
+    },
+
+    {
+      id: 2,
+      image: '/maya.png',
+      area: 'kawale',
+      trade: 'Trade',
+      name: 'Provider Name',
+      bio: 'Bio',
+    },
+
+    {
+      id: 3,
+      image: '/martin.png',
+      area: 'Area 49',
+      trade: 'Trade',
+      name: 'Provider Name',
+      bio: 'Bio',
+    },
+
+    {
+      id: 4,
+      image: '/maya.png',
+      area: 'Area 49',
+      trade: 'Trade',
+      name: 'Provider Name',
+      bio: 'Bio',
+    },
+  ];
+
   return (
-    <section className="px-6 py-16 bg-white">
-      <h2 className="text-[#002B5B] font-bold text-xl mb-10 text-center md:text-left">
-        MEET OUR FEATURED SERVICE PROVIDERS
-      </h2>
-
-      <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-        
-        {/* The Cards Grid */}
-        <div className="flex flex-wrap justify-center gap-8">
-          <ProviderCard 
-            image="/martin.png" 
-            area="AREA 49" 
-            trade="ELECTRICIAN" 
-            name="MARTIN" 
-            bio="Certified electrician with 10 years experience in residential wiring."
-          />
-          <ProviderCard 
-            image="/maya.png" 
-            area="AREA 12" 
-            trade="PLUMBER" 
-            name="MAYA" 
-            bio="Specialist in modern kitchen fittings and emergency leak repairs."
-          />
+    <section className="px-6 py-20 max-w-7xl mx-auto bg-white">
+      
+      {/* HEADER: Title Left, Button Right */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+        <div>
+          <h2 className="text-[#D4AF37] font-bold text-lg md:text-xl tracking-widest uppercase leading-tight">
+            Meet our experienced and certified <br />
+            service providers
+          </h2>
         </div>
 
-        {/* The Side CTA Button (The one you said is on the left/side) */}
-        <div className="shrink-0">
-          <button className="border-2 border-[#002B5B] text-[#002B5B] font-bold py-4 px-8 rounded-full text-[10px] uppercase tracking-widest flex items-center gap-2 hover:bg-gray-50 transition-all">
-            Explore more service providers <span className="text-lg">›</span>
-          </button>
-        </div>
+        <button className="border-2 border-[#002B5B] text-[#002B5B] font-bold py-2.5 px-8 rounded-full text-[10px] uppercase tracking-widest flex items-center gap-2 hover:bg-[#002B5B] hover:text-white transition-all whitespace-nowrap group">
+          Explore more service providers 
+          <span className="text-lg group-hover:translate-x-1 transition-transform">›</span>
+        </button>
+      </div>
 
+      {/* THE GRID: 4 columns on Desktop, 2 on Tablet, 1 on Mobile */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 justify-items-center">
+        {providers.map((person) => (
+          <ProviderCard 
+            key={person.id}
+            image={person.image}
+            area={person.area}
+            trade={person.trade}
+            name={person.name}
+            bio={person.bio}
+          />
+        ))}
       </div>
     </section>
   );
