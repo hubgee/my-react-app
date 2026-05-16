@@ -18,13 +18,13 @@ const TrustSection = () => {
       </div>
 
       {/* Stats Row */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 text-center">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-12">
         {stats.map((stat, index) => (
-          <div key={index} className="flex flex-col items-center">
-            <h3 className="text-[#FFB800] text-7xl md:text-8xl font-bold mb-2">
+          <div key={index} className="flex flex-col md:items-start">
+            <h3 className="text-[#FFB800] text-7xl md:text-8xl font-extrabold mb-2 leading-none">
               {stat.value}
             </h3>
-            <p className="text-[#002B5B] font-bold text-xs uppercase tracking-widest max-w-37.5">
+            <p classNamme="text-[#002B5B] font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] max-w-[160px] leading-relaxed">
               {stat.label}
             </p>
           </div>

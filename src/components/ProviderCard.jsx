@@ -1,6 +1,6 @@
 const ProviderCard = ({ image, area, trade, name, bio }) => {
   return (
-    <div className="flex flex-col border-2 border-[#002B5B] rounded-3xl w-full max-w-70">
+    <div className="flex flex-col text-center border-2 border-[#002B5B] rounded-3xl w-full max-w-70">
       {/* 1. Image Container with Yellow Background */}
       <div className=" rounded-4xl overflow-hidden mb-4 h-64 flex items-end justify-center shadow-sm">
         {/* We use h-[90%] to make the person "float" slightly off the bottom */}
@@ -27,9 +27,11 @@ const ProviderCard = ({ image, area, trade, name, bio }) => {
       </p>
 
       {/* 5. Action Button (Solid Gold Pill) */}
-      <button className="bg-[#D4AF37] text-[#002B5B] font-bold py-2 px-6 rounded-full text-[9px] uppercase tracking-widest self-start hover:bg-[#E5C158] transition-colors shadow-sm">
+      <div className="flex justify-center w-full mb-4">
+      <button className="w-30 bg-[#D4AF37] text-[#002B5B] font-bold py-2 px-6 rounded-full text-[9px] uppercase tracking-widest hover:bg-[#E5C158] transition-colors shadow-sm">
         Learn More
       </button>
+      </div>
     </div>
   );
 };
